@@ -24,4 +24,5 @@ import mediapipe.python.solutions.hands_connections
 import mediapipe.python.solutions.holistic
 import mediapipe.python.solutions.objectron
 import mediapipe.python.solutions.pose
+import mediapipe.python.solutions.pose_gpu
 import mediapipe.python.solutions.selfie_segmentation
