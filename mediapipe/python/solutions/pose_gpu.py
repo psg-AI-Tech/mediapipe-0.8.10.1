@@ -157,8 +157,8 @@ class Pose(SolutionBase):
         calculator_params={
             'posedetectiongpu__TensorsToDetectionsCalculator.min_score_thresh':
                 min_detection_confidence,
-            'poselandmarkbyroigpu__tensorstoposelandmarksandsegmentation__ThresholdingCalculator.threshold':
-                min_tracking_confidence,
+            # 'poselandmarkbyroigpu__tensorstoposelandmarksandsegmentation__ThresholdingCalculator.threshold':
+            #     min_tracking_confidence,
         },
         outputs=['pose_landmarks', 'pose_world_landmarks', 'segmentation_mask'])
 

@@ -218,13 +218,14 @@ class BuildBinaryGraphs(build_ext.build_ext):
   def run(self):
     _check_bazel()
     binary_graphs = [
-        # 'face_detection/face_detection_short_range_gpu',
-        # 'face_detection/face_detection_full_range_gpu',
-        # 'face_landmark/face_landmark_front_gpu',
-        # 'hand_landmark/hand_landmark_tracking_gpu',
-        # 'holistic_landmark/holistic_landmark_gpu', 'objectron/objectron_gpu',
+        'face_detection/face_detection_short_range_gpu',
+        'face_detection/face_detection_full_range_gpu',
+        'face_landmark/face_landmark_front_gpu',
+        'hand_landmark/hand_landmark_tracking_gpu',
+        'holistic_landmark/holistic_landmark_gpu', 
+        # 'objectron/objectron_gpu',
         'pose_landmark/pose_landmark_gpu',
-        # 'selfie_segmentation/selfie_segmentation_gpu'
+        'selfie_segmentation/selfie_segmentation_gpu'
     ]
     for binary_graph in binary_graphs:
       sys.stderr.write('generating binarypb: %s\n' %

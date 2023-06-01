@@ -117,7 +117,7 @@ mediapipe_simple_subgraph(
 
 mediapipe_simple_subgraph(
     name = "pose_landmark_gpu",
-    graph = "pose_landmark_gpu.pbtxt",
+    graph = "pose_landmark_gpu02.pbtxt",
     register_as = "PoseLandmarkGpu",
     deps = [
         ":pose_detection_to_roi",

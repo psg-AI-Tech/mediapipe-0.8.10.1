@@ -167,9 +167,11 @@ mediapipe/gpu/gpu_origin_pb2.py
 mediapipe/gpu/scale_mode_pb2.py
 mediapipe/modules/__init__.py
 mediapipe/modules/face_detection/__init__.py
+mediapipe/modules/face_detection/face_detection_full_range_gpu.binarypb
 mediapipe/modules/face_detection/face_detection_full_range_sparse.tflite
 mediapipe/modules/face_detection/face_detection_pb2.py
 mediapipe/modules/face_detection/face_detection_short_range.tflite
+mediapipe/modules/face_detection/face_detection_short_range_gpu.binarypb
 mediapipe/modules/face_geometry/__init__.py
 mediapipe/modules/face_geometry/effect_renderer_calculator_pb2.py
 mediapipe/modules/face_geometry/env_generator_calculator_pb2.py
@@ -180,12 +182,15 @@ mediapipe/modules/face_geometry/protos/face_geometry_pb2.py
 mediapipe/modules/face_geometry/protos/geometry_pipeline_metadata_pb2.py
 mediapipe/modules/face_geometry/protos/mesh_3d_pb2.py
 mediapipe/modules/face_landmark/face_landmark.tflite
+mediapipe/modules/face_landmark/face_landmark_front_gpu.binarypb
 mediapipe/modules/face_landmark/face_landmark_with_attention.tflite
 mediapipe/modules/hand_landmark/hand_landmark_full.tflite
 mediapipe/modules/hand_landmark/hand_landmark_lite.tflite
+mediapipe/modules/hand_landmark/hand_landmark_tracking_gpu.binarypb
 mediapipe/modules/hand_landmark/handedness.txt
 mediapipe/modules/holistic_landmark/__init__.py
 mediapipe/modules/holistic_landmark/hand_recrop.tflite
+mediapipe/modules/holistic_landmark/holistic_landmark_gpu.binarypb
 mediapipe/modules/holistic_landmark/calculators/__init__.py
 mediapipe/modules/holistic_landmark/calculators/roi_tracking_calculator_pb2.py
 mediapipe/modules/iris_landmark/iris_landmark.tflite
@@ -209,6 +214,7 @@ mediapipe/modules/pose_detection/pose_detection.tflite
 mediapipe/modules/pose_landmark/pose_landmark_full.tflite
 mediapipe/modules/pose_landmark/pose_landmark_gpu.binarypb
 mediapipe/modules/selfie_segmentation/selfie_segmentation.tflite
+mediapipe/modules/selfie_segmentation/selfie_segmentation_gpu.binarypb
 mediapipe/modules/selfie_segmentation/selfie_segmentation_landscape.tflite
 mediapipe/python/__init__.py
 mediapipe/python/packet_creator.py
