@@ -87,7 +87,7 @@ class PoseLandmark(enum.IntEnum):
   RIGHT_FOOT_INDEX = 32
 
 
-_BINARYPB_FILE_PATH = '/home/ubuntu/temp/mediapipe-0.8.10.1/bazel-bin/mediapipe/modules/pose_landmark/pose_landmark_gpu.binarypb'
+_BINARYPB_FILE_PATH = 'mediapipe/modules/pose_landmark/pose_landmark_gpu.binarypb'
 # _BINARYPB_FILE_PATH = 'mediapipe/modules/pose_landmark/pose_landmark_gpu.binarypb'
 
 
