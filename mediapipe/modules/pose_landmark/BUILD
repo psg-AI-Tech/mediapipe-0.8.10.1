@@ -118,14 +118,14 @@ mediapipe_simple_subgraph(
 mediapipe_simple_subgraph(
     name = "pose_landmark_gpu",
     graph = "pose_landmark_gpu.pbtxt",
-    register_as = "PoseLandmarkGpuxx",
+    register_as = "PoseLandmarkGpu",
     deps = [
         ":pose_detection_to_roi",
         ":pose_landmark_by_roi_gpu",
         ":pose_landmark_filtering",
         ":pose_landmarks_to_roi",
         ":pose_segmentation_filtering",
-        # "//mediapipe/calculators/core:constant_side_packet_calculator",
+        "//mediapipe/calculators/core:constant_side_packet_calculator",
         "//mediapipe/calculators/core:gate_calculator",
         "//mediapipe/calculators/core:merge_calculator",
         "//mediapipe/calculators/core:packet_presence_calculator",
@@ -133,11 +133,6 @@ mediapipe_simple_subgraph(
         "//mediapipe/calculators/core:split_vector_calculator",
         "//mediapipe/calculators/image:image_properties_calculator",
         "//mediapipe/calculators/util:from_image_calculator",
-        
-        "//mediapipe/calculators/image:color_convert_calculator",
-        "//mediapipe/gpu:gpu_buffer_to_image_frame_calculator",
-        "//mediapipe/gpu:image_frame_to_gpu_buffer_calculator",
-
         "//mediapipe/modules/pose_detection:pose_detection_gpu",
     ],
 )
