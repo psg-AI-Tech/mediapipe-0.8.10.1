@@ -123,7 +123,7 @@ class Holistic(SolutionBase):
             'use_prev_landmarks': not static_image_mode,
         },
         calculator_params={
-            'poselandmarkcpu__posedetectioncpu__TensorsToDetectionsCalculator.min_score_thresh':
+            'poselandmarkcpu__PoseDetectionCpu__TensorsToDetectionsCalculator.min_score_thresh':
                 min_detection_confidence,
             'poselandmarkcpu__poselandmarkbyroicpu__tensorstoposelandmarksandsegmentation__ThresholdingCalculator.threshold':
                 min_tracking_confidence,

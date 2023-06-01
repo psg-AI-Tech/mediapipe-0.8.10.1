@@ -24,7 +24,7 @@ package(default_visibility = ["//visibility:public"])
 mediapipe_simple_subgraph(
     name = "pose_detection_cpu",
     graph = "pose_detection_cpu.pbtxt",
-    register_as = "PoseDetectionCpu",
+    register_as = "PoseDetectionCpux",
     deps = [
         "//mediapipe/calculators/tensor:image_to_tensor_calculator",
         "//mediapipe/calculators/tensor:inference_calculator",

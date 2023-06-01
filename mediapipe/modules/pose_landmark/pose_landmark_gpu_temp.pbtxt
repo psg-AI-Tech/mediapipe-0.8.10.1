@@ -1,5 +1,5 @@
-# MediaPipe graph to detect/predict pose landmarks. (CPU input, and inference is
-# executed on CPU.) This graph tries to skip pose detection as much as possible
+# MediaPipe graph to detect/predict pose landmarks. (GPU input, and inference is
+# executed on GPU.) This graph tries to skip pose detection as much as possible
 # by using previously detected/predicted landmarks for new images.
 #
 # It is required that "pose_detection.tflite" is available at
@@ -16,7 +16,7 @@
 #
 # EXAMPLE:
 #   node {
-#     calculator: "PoseLandmarkCpu"
+#     calculator: "PoseLandmarkGpu"
 #     input_side_packet: "MODEL_COMPLEXITY:model_complexity"
 #     input_side_packet: "SMOOTH_LANDMARKS:smooth_landmarks"
 #     input_side_packet: "ENABLE_SEGMENTATION:enable_segmentation"
@@ -27,9 +27,9 @@
 #     output_stream: "SEGMENTATION_MASK:segmentation_mask"
 #   }
 
-type: "PoseLandmarkCpu"
+type: "PoseLandmarkGpu"
 
-# CPU image. (ImageFrame)
+# GPU image. (GpuBuffer)
 input_stream: "IMAGE:image"
 
 # Whether to filter landmarks across different input images to reduce jitter.
@@ -104,7 +104,7 @@ output_stream: "LANDMARKS:pose_landmarks"
 # coordinates (in meters) of the 3D object itself.
 output_stream: "WORLD_LANDMARKS:pose_world_landmarks"
 
-# Segmentation mask. (ImageFrame in ImageFormat::VEC32F1)
+# Segmentation mask. (GpuBuffer in RGBA, with the same mask values in R and A)
 output_stream: "SEGMENTATION_MASK:segmentation_mask"
 
 # Extra outputs (for debugging, for instance).
@@ -140,7 +140,7 @@ node: {
 # Calculates size of the image.
 node {
   calculator: "ImagePropertiesCalculator"
-  input_stream: "IMAGE_CPU:image"
+  input_stream: "IMAGE_GPU:image"
   output_stream: "SIZE:image_size"
 }
 
@@ -163,7 +163,7 @@ node {
 
 # Detects poses.
 node {
-  calculator: "PoseDetectionCpux"
+  calculator: "PoseDetectionGpu"
   input_stream: "IMAGE:image_for_pose_detection"
   output_stream: "DETECTIONS:pose_detections"
 }
@@ -202,7 +202,7 @@ node {
 
 # Detects pose landmarks within specified region of interest of the image.
 node {
-  calculator: "PoseLandmarkByRoiCpu"
+  calculator: "PoseLandmarkByRoiGpu"
   input_side_packet: "MODEL_COMPLEXITY:model_complexity"
   input_side_packet: "ENABLE_SEGMENTATION:enable_segmentation"
   input_stream: "IMAGE:image"
@@ -260,9 +260,9 @@ node {
 }
 
 # Converts the incoming segmentation mask represented as an Image into the
-# corresponding ImageFrame type.
+# corresponding GpuBuffer type.
 node: {
   calculator: "FromImageCalculator"
   input_stream: "IMAGE:filtered_segmentation_mask"
-  output_stream: "IMAGE_CPU:segmentation_mask"
+  output_stream: "IMAGE_GPU:segmentation_mask"
 }

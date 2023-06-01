@@ -154,7 +154,7 @@ class Pose(SolutionBase):
             'use_prev_landmarks': not static_image_mode,
         },
         calculator_params={
-            'posedetectioncpu__TensorsToDetectionsCalculator.min_score_thresh':
+            'posedetectioncpux__TensorsToDetectionsCalculator.min_score_thresh':
                 min_detection_confidence,
             'poselandmarkbyroicpu__tensorstoposelandmarksandsegmentation__ThresholdingCalculator.threshold':
                 min_tracking_confidence,
