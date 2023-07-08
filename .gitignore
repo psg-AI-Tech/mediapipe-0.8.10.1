@@ -5,4 +5,6 @@ mediapipe/provisioning_profile.mobileprovision
 .configure.bazelrc
 .user.bazelrc
 [Bb]uild
+\__pycache__
 mediapipe.egg-info
+*.so
